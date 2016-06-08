@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/web_static/app/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/web_static/app/css/kleurtest.css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NLT Inhibitie</title>
+    </head>
+    
+    <body>
+        <div class="col-md-6 col-md-offset-3 bordered">
+            <div class="kleur">
+                <h1 class="centered-text">Typ de kleur:</h1>
+                <h3 class="{{ kleur }} centered-text">{{ kleurtext }}</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="text" class="inputbox" name="antwoord" placeholder="Antwoord..." autofocus/>
+                    <button class="btn btn-default pull-right btnvolgende" type="submit">Volgende</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
