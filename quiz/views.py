@@ -77,7 +77,7 @@ def resultaten(request):
         if amans <= 10:
             request.session["notnuff"] = True
             return redirect("notnuff")
-        score = "Zeg hoeveel je er hebt geantwoord en hoeveel je er goed had."
+        score = (gamans/amans*9+1)*float(amans)/100
         return render(request, 'app/resultaten.html', {'amans': amans, 'gamans': gamans, 'score': str(score)})
         
 def notnuff(request):
